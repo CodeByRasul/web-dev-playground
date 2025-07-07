@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="SearchTours.css">
+</head>
+<body>
+    <nav class="nav">
+        <div class="list">
+            <ul class="ph">
+                <li><a href="HotTours.html">Горящие туры</a></li>
+                <li><a href="LowPriceCalendar.html">Календарь низких цен</a></li>
+                <li><a href="SearchTours.Html">Поиск туров</a></li>
+                <li><a href="#">Статьи</a></li>
+                <li><a href="AboutUs.html">О нас</a></li>
+                <li><a href="Contacts.html">Контакты</a></li>
+            </ul>
+        </div>
+        <div class="networks">
+            <a href="#"><img src="icons/nav-telegram.svg" alt="saf"></a>
+            <a href="#"><img src="icons/nav-instagram.svg" alt="saff"></a>
+            <div class="dropdown">
+                <select name="languges" id="">
+                    <option value="Eng">Eng</option>
+                    <option value="Rus">Rus</option>
+                    <option value="Uz">Uzb</option>
+                </select>
+            </div>
+        </div>
+    </nav>
+    <section class="main">
+        <div class="head">
+            <a href="Index.html"><img src="icons/ru.png" alt="logo" class="logotype"></a>
+            <div class="righthead">
+                <div class="location">
+                    <img src="icons/location.png" alt="location" class="png">
+                    <p>Наш адрес <br> <span class="biggertext">ул.Осиё, 89/33, Ташкент</span> </p>                    
+                </div>
+                <div class="contact">
+                    <img src="icons/phone-circle.png" alt="phone" class="png">
+                    <p>Работаем с 10.00 до 19.00 <br> <span class="biggertext">+998 (78) 113-60-51</span></p>
+                </div>
+                <button class="button">
+                    <img src="icons/callcenter.png" alt="call" class="png1">
+                    <p class="buttonText">Помощь в подборе тура</p>
+                </button>   
+            </div>
+        </div>
+        <div class="description">
+            <p class="first">Сравнивайте цены от 31 туроператора в режиме онлайн!</p>
+            <h1 class="second">BRONIX - онлайн поиск и бронирование туров!</h1>
+            <div class="under">
+                <p class="btn">Поиск туров</p>
+                <p><a href="#">Горящие туры</a></p>
+            </div>
+        </div>
+    </section>
+
+    <div class="mainform">
+        <div class="mainform1">
+            <div class="search">
+                <div class="formgroup">
+                    <label for="">Вылет из:</label>
+                    <select id="" name="" class="selectform">
+                    <option>Алматы</option>
+                    <option>Астаны</option>
+                    <option>Шымкента</option>
+                    <option>Бишкека</option>
+                    <option>Ташкента</option>
+                    <option>Самарканда</option>
+                    </select>
+                </div>
+                <div class="formgroup">
+                    <label for="destination">Куда?</label>
+                    <input type="text" id="destination" name="destination" placeholder="Страна, курорт или отель" class="selectform2" required>
+                    <small class="error-message">Пожалуйста, укажите место назначения.</small>
+                </div>
+            </div>
+            <div class="search1">
+                <div class="formgroup">
+                    <label for="duration">Длительность</label>
+                    <select id="duration" name="duration" class="selectform">
+                    <option>на 7-9 ночей</option>
+                    <option>на 10-12 ночей</option>
+                    <option>на 14+ ночей</option>
+                    </select>
+                </div>
+                <div class="formgroup">
+                    <label for="date">Дата начала тура:</label>
+                    <input type="date" id="date" name="date" class="selectform2" required>
+                    <small class="error-message">Пожалуйста, выберите дату.</small>
+                </div>
+            </div>
+            <div class="search3">
+                <div class="formgroup">
+                    <label for="stars">Кол-во звезд</label>
+                    <select id="stars" name="stars" class="selectform">
+                    <option>любое</option>
+                    <option>3*</option>
+                    <option>4*</option>
+                    <option>5*</option>
+                    </select>
+                </div>
+                <div class="formgroup">
+                    <label for="people">Количество Людей</label>
+                    <input type="number" id="people" name="people" value="2" class="selectform2">
+                </div>
+            </dif>
+            <button class="selectform3" type="submit" onclick="validateForm(event)">Поиск</button>
+        </div>
+    </div>
+
+    <div class="fixed-block">
+        <div class="flex">
+            <p>Наш номер: <br> +998 (78) 113-73-00</p>
+            <button class="flexbutton">Перезвоните мне</button>
+        </div>
+    </div>  
+    <script>
+        function validateForm(event) {
+            event.preventDefault();
+    
+            const destination = document.getElementById('destination');
+            const date = document.getElementById('date');
+    
+            let isValid = true;
+    
+            if (!destination.value.trim()) {
+                alert('Пожалуйста, укажите место назначения.');
+                isValid = false;
+            }
+    
+            if (!date.value) {
+                alert('Пожалуйста, выберите дату.');
+                isValid = false;
+            }
+    
+            if (isValid) {
+                alert('Форма отправлена успешно!');
+            }
+        }
+    </script>
+</body>
+</html>
